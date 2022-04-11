@@ -23,5 +23,6 @@ node {
 
     stage('Result') {
         echo 'success to build'
+        echo 'success to build'
     }
 }
