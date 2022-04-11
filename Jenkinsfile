@@ -1,6 +1,9 @@
 node {
 
     def mvnHome
+    tools {
+        git 'Default'
+    }
 
     // 빌드를 위한 소스코드 clone
     stage('Clone codebase') {
@@ -21,8 +24,8 @@ node {
         }
     }
 
-    stage('Result') {
-        echo 'success to build'
-        echo 'success to build'
+    stage('Results') {
+        junit '**/target/surefire-reports/TEST-*.xml'
+        archiveArtifacts 'target/*.jar'
     }
 }
