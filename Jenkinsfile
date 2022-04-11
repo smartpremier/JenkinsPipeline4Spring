@@ -1,11 +1,12 @@
-pipeline {
-    tools {
-        maven 'Maven 3.8.5'
-        git 'Default'
-    }
-    stages {
-        stage('Clone codebase') {
-            git branch: 'main', credentialsId: 'f6d3ec62-0097-4a49-becc-bfa340111490', url: 'https://github.com/smartpremier/JenkinsPipeline4Spring.git'
+node {
+    def mvnHome = tool 'M3_HOME'
+    stage('Build') {
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix) {
+                echo "This is Unix"
+            } else {
+                echo "This is not Unix"
+            }
         }
     }
 }
