@@ -1,32 +1,7 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello Pipeline'
-            }
-        }
-        stage('build') {
-            steps {
-                echo 'build Pipeline'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deploy Pipeline'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'test Pipeline'
-            }
-        }
-        stage('release') {
-            steps {
-                echo 'release Pipeline'
-            }
-        }
+node {
+    def mvnHome
+    stage('Preparation') {
+        git 'https://github.com/smartpremier/JenkinsPipeline4Spring.git'
+        mvnHome = tool 'M2_HOME'
     }
 }
-
