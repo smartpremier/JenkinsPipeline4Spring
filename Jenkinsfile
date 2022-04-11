@@ -20,4 +20,8 @@ node {
             }
         }
     }
+
+    stage('Result') {
+        echo 'success to build'
+    }
 }
