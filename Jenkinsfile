@@ -9,4 +9,11 @@ node {
     stage('Preparation') { // for display purposes
         checkout scm
     }
+
+    // Docker Build
+    stage('Build Docker Image') {
+        echo 'dockerImagePrefix=${dockerImagePrefix}'
+        echo 'dockerImageArtifactId=${dockerImageArtifactId}'
+        echo 'dockerImageVersion=${env.BUILD_NUMBER}'
+    }
 }
