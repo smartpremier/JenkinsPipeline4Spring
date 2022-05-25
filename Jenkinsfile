@@ -11,8 +11,8 @@ node {
 
     // Docker Build
     stage('Build Docker Image') {
-        echo 'dockerImagePrefix=${dockerImagePrefix}'
-        echo 'dockerImageArtifactId=${dockerImageArtifactId}'
-        echo 'dockerImageVersion=${BUILD_NUMBER}'
+        echo "dockerImagePrefix=${dockerImagePrefix}"
+        echo "dockerImageArtifactId=${dockerImageArtifactId}"
+        echo "dockerImageVersion=${BUILD_NUMBER}"
     }
 }
